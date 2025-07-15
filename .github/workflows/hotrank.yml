@@ -1,40 +1,61 @@
-name: Daily HotRank Grabber
+name: Daily HotNews Builder
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # 每天 08:00（北京时间）运行
-  workflow_dispatch:       # 支持手动运行
+    - cron: '0 0 * * *'          # 每天 00:00 UTC（北京 08:00）
+  workflow_dispatch:             # 允许手动触发
 
 jobs:
-  build:
+  grab-and-push:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3      # 拉取你的 hotnews 仓库
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Run inline crawler
         run: |
-          pip install requests lxml feedparser
+          cat > grab.py << 'PY'
+          import requests, re, json, datetime, sys
+          today = datetime.date.today().strftime("%Y-%m-%d")
 
-      - name: Clone HotRank
-        run: git clone https://github.com/funbox/HotRank.git
+          # SnailDev 的每日归档 Markdown（公共、无需 API）
+          URLS = {
+              "微博":  f"https://raw.githubusercontent.com/SnailDev/weibo-hot-hub/main/archives/{today}.md",
+              "知乎":  f"https://raw.githubusercontent.com/SnailDev/zhihu-hot-hub/main/archives/{today}.md",
+              "微信":  f"https://raw.githubusercontent.com/SnailDev/wechat-hot-hub/main/archives/{today}.md",
+              "头条":  f"https://raw.githubusercontent.com/SnailDev/toutiao-hot-hub/main/archives/{today}.md",
+              "抖音":  f"https://raw.githubusercontent.com/SnailDev/douyin-hot-hub/main/archives/{today}.md"
+          }
 
-      - name: Run HotRank and generate JSON
+          pattern = re.compile(r'\d+\\.\\s*\\[(.+?)\\]\\((https?://[^)]+)\\)')
+          results = []
+
+          for src, url in URLS.items():
+              try:
+                  txt = requests.get(url, timeout=15).text
+                  items = pattern.findall(txt)[:10]          # 只取前 10 条
+                  for title, link in items:
+                      results.append({"title": title.strip(),
+                                      "link": link.strip(),
+                                      "source": src})
+              except Exception as e:
+                  print(f"[WARN] {src} 获取失败: {e}", file=sys.stderr)
+
+          out = f"hotnews_{today}.json"
+          with open(out, "w", encoding="utf-8") as f:
+              json.dump(results, f, ensure_ascii=False, indent=2)
+          print(f"生成 {out} 共 {len(results)} 条")
+          PY
+          python grab.py
+
+      - name: Commit & Push JSON
         run: |
-          cd HotRank
-          today=$(date +%F)
-          python3 main.py --platform weibo zhihu wechat toutiao douyin > ../hotnews_$today.json
-
-      - name: Commit and push results
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add hotnews_*.json
-          git commit -m "自动更新热榜 $(date '+%Y-%m-%d')" || echo "No changes"
+          git commit -m "Auto update hotnews $(date +'%Y-%m-%d')" || echo "no changes"
           git push
