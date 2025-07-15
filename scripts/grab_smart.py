@@ -1,0 +1,23 @@
+name: Daily HotNews Smart
+on: [workflow_dispatch]
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: {python-version: '3.10'}
+      - run: |
+          python -m pip install --upgrade pip
+          pip install requests openai
+          python scripts/grab_smart.py
+      - run: |
+          git config --global user.name  'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add hotnews_smart_*.json
+          git commit -m "smart hotnews $(date +'%F')" || echo "No changes"
+          git push
