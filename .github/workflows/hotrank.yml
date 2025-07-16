@@ -17,7 +17,16 @@ jobs:
       - run: |
           python -m pip install --upgrade pip
           pip install requests openai
-          python scripts/grab_smart.py      # ← 调用你的抓取脚本
+
+      - name: 🔍 测试 OpenAI 是否可访问
+        run: |
+          echo "📡 正在尝试连接 OpenAI..."
+          curl https://api.openai.com/v1/models \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -s | head -n 20
+
+      - run: |
+          python scripts/grab_smart.py   # ← 调用你的抓取脚本
 
       - run: |
           git config --global user.name  'github-actions[bot]'
