@@ -7,7 +7,11 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
+      - name: ⏱️ 延迟测试 10 秒
+        run: sleep 10
+
       - uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
@@ -21,12 +25,18 @@ jobs:
       - name: 🔍 测试 OpenAI 是否可访问
         run: |
           echo "📡 正在尝试连接 OpenAI..."
-          curl https://api.openai.com/v1/models \
-            -H "Authorization: Bearer $OPENAI_API_KEY" \
-            -s | head -n 20
+          http_status=$(curl -s -o /dev/null -w "%{http_code}" https://api.openai.com/v1/models \
+            -H "Authorization: Bearer $OPENAI_API_KEY")
+          echo "✅ 返回状态码: $http_status"
+          if [ "$http_status" -eq 200 ]; then
+            echo "✅ OpenAI 可访问"
+          else
+            echo "❌ OpenAI 无法访问，状态码：$http_status"
+            exit 1
+          fi
 
       - run: |
-          python scripts/grab_smart.py   # ← 调用你的抓取脚本
+          python scripts/grab_smart.py
 
       - run: |
           git config --global user.name  'github-actions[bot]'
