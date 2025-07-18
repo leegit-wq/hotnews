@@ -16,31 +16,65 @@ items = []
 
 def basic_summary(title: str):
     return (title[:38] + '…') if len(title) > 40 else title
+import base64
+import hmac
+import hashlib
+
+def volc_chat(content):
+    access_key = os.getenv("VIOCE").split(":")[0]
+    secret_key = os.getenv("VIOCE").split(":")[1]
+    endpoint = "https://maas-api.ml-platform-cn-beijing.volces.com/api/v1/chat/completions"
+    model = "chatglm-130b-r1"  # 或 "chatglm-130b-r3"
+
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": "",  # 火山引擎认证方式稍特殊，略下方说明
+    }
+
+    payload = {
+        "model": model,
+        "messages": [{"role": "user", "content": content}],
+        "parameters": {"temperature": 0.7, "max_new_tokens": 80}
+    }
+
+    # 用 AccessKey / SecretKey 生成 HMAC-SHA256 签名（简化版本）
+    t = int(time.time())
+    to_sign = f"{access_key}{t}"
+    sign = base64.b64encode(
+        hmac.new(secret_key.encode(), to_sign.encode(), digestmod=hashlib.sha256).digest()
+    ).decode()
+
+    headers["Authorization"] = f"HMAC-SHA256 Credential={access_key}, Timestamp={t}, Signature={sign}"
+
+    rsp = requests.post(endpoint, json=payload, headers=headers, timeout=15)
+    if rsp.status_code == 200:
+        try:
+            return rsp.json()["choices"][0]["message"]["content"]
+        except:
+            return ""
+    else:
+        print("🔥 火山引擎调用失败：", rsp.text)
+        return ""
 
 def gen_summary(title):
     prompt = f"请判断以下事件与普通人生活的关联程度（高/中/低），并用一句话总结，用冒号分隔。\n标题：{title}"
     for attempt in range(3):
-        try:
-            rsp = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role":"user","content":prompt}],
-                temperature=0.6,
-                max_tokens=80
-            )
-            text = rsp.choices[0].message.content.strip()
-            text = text.replace("：", ":")
-            m = re.match(r"(高|中|低)\s*[:：]\s*(.+)", text)
-            if m:
-                rel_zh, summ = m.groups()
-            else:
-                rel_zh, summ = "中", text
-            rel_map = {"高":"high", "中":"medium", "低":"low"}
-            relevance = rel_map.get(rel_zh, "medium")
-            return summ.strip()[:120], relevance
-        except Exception as e:
-            print(f"[{attempt+1}/3] OpenAI 调用失败: {e}")
-            time.sleep(2 + random.uniform(0,2))
+        text = volc_chat(prompt)
+        if not text:
+            time.sleep(2 + random.uniform(0, 2))
+            continue
+        text = text.replace("：", ":")
+        m = re.match(r"(高|中|低)\s*[:：]\s*(.+)", text)
+        if m:
+            rel_zh, summ = m.groups()
+        else:
+            rel_zh, summ = "中", text
+        rel_map = {"高":"high", "中":"medium", "低":"low"}
+        relevance = rel_map.get(rel_zh, "medium")
+        return summ.strip()[:120], relevance
     return basic_summary(title), "low"
+
 
 for src, url in URLS.items():
     try:
