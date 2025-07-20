@@ -1,0 +1,17 @@
+name: Test VolcEngine
+
+on: [workflow_dispatch]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      VIOCE: ${{ secrets.VIOCE }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: |
+          pip install requests
+          python scripts/test_volc.py
