@@ -1,7 +1,7 @@
 name: Daily HotNews Smart
 on:
   schedule:
-    - cron: '0 2 * * *'   # 每天 UTC+2 自动运行
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 env:
@@ -19,19 +19,21 @@ jobs:
 
       - run: |
           python -m pip install --upgrade pip
-          pip install requests openai
+          pip install requests openai beautifulsoup4
 
-      - name: 🔍 测试 Ark API 可用性
+      - name: 🔍 Ark API 连接测试
         run: |
-          echo "📡 正在测试 Ark API..."
-          curl https://ark.cn-beijing.volces.com/api/v3 -I || true
+          echo "📡 测试 Ark API Ping"
+          curl -I https://ark.cn-beijing.volces.com/api/v3 || true
 
-      - run: |
+      - name: 📥 抓取 & 生成摘要
+        run: |
           python scripts/grab_smart.py
 
-      - run: |
-          git config --global user.name  'github-actions[bot]'
+      - name: 📤 提交结果
+        run: |
+          git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add hotnews_smart_*.json
-          git commit -m "🔥 Smart hotnews update"
+          git commit -m "🔥 更新 smart hotnews $(date +'%F')" || echo "无改动"
           git push
