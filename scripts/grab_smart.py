@@ -1,3 +1,4 @@
+import re
 import requests, json, datetime, os, time, random, feedparser
 from bs4 import BeautifulSoup
 from openai import OpenAI
