@@ -12,8 +12,8 @@ today = datetime.date.today().strftime("%Y-%m-%d")
 
 NEWS_SOURCES = {
     "头条": f"https://raw.githubusercontent.com/SnailDev/toutiao-hot-hub/main/archives/{today}.md",
-    "澎湃新闻": "https://www.thepaper.cn/rss.jsp?nodeId=28454",  # RSS 民生热点
-    "腾讯新闻": "https://news.qq.com/"
+    "腾讯新闻": "https://rsshub.app/tencent/news/index",             # RSS
+    "澎湃新闻": "https://rsshub.app/thepaper/featured"              # RSS
 }
 
 items = []
