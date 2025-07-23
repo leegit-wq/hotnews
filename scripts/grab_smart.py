@@ -1,4 +1,6 @@
-import requests, re, json, datetime, os, time, random, feedparser from bs4 import BeautifulSoup from openai import OpenAI
+import requests, re, json, datetime, os, time, random, feedparser
+from bs4 import BeautifulSoup
+from openai import OpenAI
 
 初始化 Ark 客户端
 
