@@ -1,0 +1,47 @@
+[
+  {
+    "source": "头条",
+    "title": "多预警齐发 外出需注意",
+    "link": "https://so.toutiao.com/search?keyword=%E5%A4%9A%E9%A2%84%E8%AD%A6%E9%BD%90%E5%8F%91%20%E5%A4%96%E5%87%BA%E9%9C%80%E6%B3%A8%E6%84%8F",
+    "summary": "7月26日18时 北京密云 中央气象台等多部门 发布暴雨黄色预警等多项预警（引发山洪致部分村庄被淹、交通中断）",
+    "date": "2025-07-27",
+    "relevance": "high",
+    "priority": 1
+  },
+  {
+    "source": "头条",
+    "title": "北京为何出现特大暴雨",
+    "link": "https://so.toutiao.com/search?keyword=%E5%8C%97%E4%BA%AC%E4%B8%BA%E4%BD%95%E5%87%BA%E7%8E%B0%E7%89%B9%E5%A4%A7%E6%9A%B4%E9%9B%A8",
+    "summary": "4小时前 北京密云 气象专家 分析\"列车效应\"导致特大暴雨（路面损毁/村庄被淹）",
+    "date": "2025-07-27",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "跳水冠军谈全红婵发胖原因",
+    "link": "https://so.toutiao.com/search?keyword=%E8%B7%B3%E6%B0%B4%E5%86%A0%E5%86%9B%E8%B0%88%E5%85%A8%E7%BA%A2%E5%A9%B5%E5%8F%91%E8%83%96%E5%8E%9F%E5%9B%A0",
+    "summary": "18小时前 津云 跳水冠军高敏 谈及全红婵发胖原因及缺席世锦赛情况（称其奥运夺冠后体重增长属正常调整）",
+    "date": "2025-07-27",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "警方辟谣网传释永信警情通报",
+    "link": "https://so.toutiao.com/search?keyword=%E8%AD%A6%E6%96%B9%E8%BE%9F%E8%B0%A3%E7%BD%91%E4%BC%A0%E9%87%8A%E6%B0%B8%E4%BF%A1%E8%AD%A6%E6%83%85%E9%80%9A%E6%8A%A5",
+    "summary": "50分钟前 开封 警方 辟谣网传释永信携34人潜逃被拦截的假通报（结果:通报是假的，正在开展工作）",
+    "date": "2025-07-27",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "如何看保安放水阻挠暴走团扰民",
+    "link": "https://so.toutiao.com/search?keyword=%E5%A6%82%E4%BD%95%E7%9C%8B%E4%BF%9D%E5%AE%89%E6%94%BE%E6%B0%B4%E9%98%BB%E6%8C%A0%E6%9A%B4%E8%B5%B0%E5%9B%A2%E6%89%B0%E6%B0%91",
+    "summary": "4小时前 辽宁朝阳 保安 放水阻挠暴走团占用公共道路（暴走团活动受阻）",
+    "date": "2025-07-27",
+    "relevance": "medium",
+    "priority": 2
+  }
+]
