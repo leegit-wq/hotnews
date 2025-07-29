@@ -1,0 +1,47 @@
+[
+  {
+    "source": "头条",
+    "title": "实拍北京暴雨中的地铁站出口",
+    "link": "https://so.toutiao.com/search?keyword=%E5%AE%9E%E6%8B%8D%E5%8C%97%E4%BA%AC%E6%9A%B4%E9%9B%A8%E4%B8%AD%E7%9A%84%E5%9C%B0%E9%93%81%E7%AB%99%E5%87%BA%E5%8F%A3",
+    "summary": "7月28日 北京义和庄地铁站出口等地 暴雨导致积水（视频记录）",
+    "date": "2025-07-29",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "泰柬两国领导人双双感谢中国",
+    "link": "https://so.toutiao.com/search?keyword=%E6%B3%B0%E6%9F%AC%E4%B8%A4%E5%9B%BD%E9%A2%86%E5%AF%BC%E4%BA%BA%E5%8F%8C%E5%8F%8C%E6%84%9F%E8%B0%A2%E4%B8%AD%E5%9B%BD",
+    "summary": "3小时前 泰柬边境 泰柬两国领导人 在中国参与下达成停火协议（边境局势恢复平静）",
+    "date": "2025-07-29",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "雨天出行 这份安全指南请收好",
+    "link": "https://so.toutiao.com/search?keyword=%E9%9B%A8%E5%A4%A9%E5%87%BA%E8%A1%8C%20%E8%BF%99%E4%BB%BD%E5%AE%89%E5%85%A8%E6%8C%87%E5%8D%97%E8%AF%B7%E6%94%B6%E5%A5%BD",
+    "summary": "7月28日至29日 华北部分地区 中央气象台 发布暴雨预警（预计有大到暴雨）",
+    "date": "2025-07-29",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "育儿补贴：迟到的“人口保卫战”",
+    "link": "https://so.toutiao.com/search?keyword=%E8%82%B2%E5%84%BF%E8%A1%A5%E8%B4%B4%EF%BC%9A%E8%BF%9F%E5%88%B0%E7%9A%84%E2%80%9C%E4%BA%BA%E5%8F%A3%E4%BF%9D%E5%8D%AB%E6%88%98%E2%80%9D",
+    "summary": "7月28日 中国 政府 出台育儿补贴政策（3周岁以下儿童每年可获3600元补贴）",
+    "date": "2025-07-29",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "北京密云水库泄洪 水都流去哪了",
+    "link": "https://so.toutiao.com/search?keyword=%E5%8C%97%E4%BA%AC%E5%AF%86%E4%BA%91%E6%B0%B4%E5%BA%93%E6%B3%84%E6%B4%AA%20%E6%B0%B4%E9%83%BD%E6%B5%81%E5%8E%BB%E5%93%AA%E4%BA%86",
+    "summary": "7月27日 北京密云水库 水库管理部门 启动泄流（应对建库以来最大入库流量）",
+    "date": "2025-07-29",
+    "relevance": "medium",
+    "priority": 2
+  }
+]
