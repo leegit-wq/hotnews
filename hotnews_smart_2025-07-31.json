@@ -1,0 +1,47 @@
+[
+  {
+    "source": "头条",
+    "title": "俄强震山体崩落海豹集体跳海",
+    "link": "https://so.toutiao.com/search?keyword=%E4%BF%84%E5%BC%BA%E9%9C%87%E5%B1%B1%E4%BD%93%E5%B4%A9%E8%90%BD%E6%B5%B7%E8%B1%B9%E9%9B%86%E4%BD%93%E8%B7%B3%E6%B5%B7",
+    "summary": "18小时前 俄堪察加半岛 8.7级强震引发山体崩落（激起巨浪致海豹集体跳海避险）",
+    "date": "2025-07-31",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "中国气象局：东部地区迎大暴雨",
+    "link": "https://so.toutiao.com/search?keyword=%E4%B8%AD%E5%9B%BD%E6%B0%94%E8%B1%A1%E5%B1%80%EF%BC%9A%E4%B8%9C%E9%83%A8%E5%9C%B0%E5%8C%BA%E8%BF%8E%E5%A4%A7%E6%9A%B4%E9%9B%A8",
+    "summary": "8月1日 中国东部地区 台风\"白鹿\" 带来大暴雨和特大暴雨（浙江等地受影响）",
+    "date": "2025-07-31",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "台风“竹节草”携强风雨登陆我国",
+    "link": "https://so.toutiao.com/search?keyword=%E5%8F%B0%E9%A3%8E%E2%80%9C%E7%AB%B9%E8%8A%82%E8%8D%89%E2%80%9D%E6%90%BA%E5%BC%BA%E9%A3%8E%E9%9B%A8%E7%99%BB%E9%99%86%E6%88%91%E5%9B%BD",
+    "summary": "22小时前 浙江、上海、江苏等地 台风“竹节草” 携强风雨登陆（引发暴雨、风暴增水及7-9级大风）",
+    "date": "2025-07-31",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "解放军洲际弹道导弹发射画面披露",
+    "link": "https://so.toutiao.com/search?keyword=%E8%A7%A3%E6%94%BE%E5%86%9B%E6%B4%B2%E9%99%85%E5%BC%B9%E9%81%93%E5%AF%BC%E5%BC%B9%E5%8F%91%E5%B0%84%E7%94%BB%E9%9D%A2%E6%8A%AB%E9%9C%B2",
+    "summary": "2024年9月25日8时 中国 解放军火箭军 成功发射洲际弹道导弹（画面公开）",
+    "date": "2025-07-31",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "俄堪察加地震余震或持续1个月",
+    "link": "https://so.toutiao.com/search?keyword=%E4%BF%84%E5%A0%AA%E5%AF%9F%E5%8A%A0%E5%9C%B0%E9%9C%87%E4%BD%99%E9%9C%87%E6%88%96%E6%8C%81%E7%BB%AD1%E4%B8%AA%E6%9C%88",
+    "summary": "19小时前 俄堪察加半岛 8.8级地震引发余震（或持续1个月），导致日本发布海啸避难指示、我国沿海解除海啸警报。",
+    "date": "2025-07-31",
+    "relevance": "medium",
+    "priority": 2
+  }
+]
