@@ -1,0 +1,47 @@
+[
+  {
+    "source": "头条",
+    "title": "陈楚生斩获《歌手2025》歌王",
+    "link": "https://so.toutiao.com/search?keyword=%E9%99%88%E6%A5%9A%E7%94%9F%E6%96%A9%E8%8E%B7%E3%80%8A%E6%AD%8C%E6%89%8B2025%E3%80%8B%E6%AD%8C%E7%8E%8B",
+    "summary": "8月8日晚 《歌手2025》总决赛现场 陈楚生 获得歌王称号",
+    "date": "2025-08-09",
+    "relevance": "high",
+    "priority": 1
+  },
+  {
+    "source": "头条",
+    "title": "普京与特朗普将于下周举行会晤",
+    "link": "https://so.toutiao.com/search?keyword=%E6%99%AE%E4%BA%AC%E4%B8%8E%E7%89%B9%E6%9C%97%E6%99%AE%E5%B0%86%E4%BA%8E%E4%B8%8B%E5%91%A8%E4%B8%BE%E8%A1%8C%E4%BC%9A%E6%99%A4",
+    "summary": "8月15日 阿拉斯加 普京与特朗普 举行会晤（讨论乌克兰长期和平方案）",
+    "date": "2025-08-09",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "防汛有新招 看无人机、船协同作战",
+    "link": "https://so.toutiao.com/search?keyword=%E9%98%B2%E6%B1%9B%E6%9C%89%E6%96%B0%E6%8B%9B%20%E7%9C%8B%E6%97%A0%E4%BA%BA%E6%9C%BA%E3%80%81%E8%88%B9%E5%8D%8F%E5%90%8C%E4%BD%9C%E6%88%98",
+    "summary": "19小时前 桂花水文站 无人机和无人船 应用全变幅测报技术实现全天候水文监测（提高了防汛机动性和时效性）",
+    "date": "2025-08-09",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "专家解读北京夜空黑影“御剑飞行”",
+    "link": "https://so.toutiao.com/search?keyword=%E4%B8%93%E5%AE%B6%E8%A7%A3%E8%AF%BB%E5%8C%97%E4%BA%AC%E5%A4%9C%E7%A9%BA%E9%BB%91%E5%BD%B1%E2%80%9C%E5%BE%A1%E5%89%91%E9%A3%9E%E8%A1%8C%E2%80%9D",
+    "summary": "20小时前 北京 网友 拍到雷暴云团中黑影疑似“御剑飞行”，专家解释为云闪现象形成的云层移动黑影",
+    "date": "2025-08-09",
+    "relevance": "medium",
+    "priority": 2
+  },
+  {
+    "source": "头条",
+    "title": "学者：普京对特朗普做出两个让步",
+    "link": "https://so.toutiao.com/search?keyword=%E5%AD%A6%E8%80%85%EF%BC%9A%E6%99%AE%E4%BA%AC%E5%AF%B9%E7%89%B9%E6%9C%97%E6%99%AE%E5%81%9A%E5%87%BA%E4%B8%A4%E4%B8%AA%E8%AE%A9%E6%AD%A5",
+    "summary": "8月15日 阿拉斯加州 特朗普与普京 举行会晤（美俄证实）",
+    "date": "2025-08-09",
+    "relevance": "medium",
+    "priority": 2
+  }
+]
